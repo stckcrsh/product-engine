@@ -16,7 +16,9 @@ import { CodeNode, CodeNodeProcessorFactory } from './code.node';
 import { ConsoleNode, ConsoleNodeProcessorFactory } from './console.node';
 import { ContextMenu } from './contextMenu.component';
 import { JsonEProcessorFactory, JsonERendererNode } from './jsonERenderer.node';
-import { JsonParseProcessorFactory } from './jsonParse.node';
+import { JsonParseNode, JsonParseProcessorFactory } from './jsonParse.node';
+import { PlatformFileNode, PlatformFileNodeProcessorFactory } from './platformFile.node';
+import { platformFileTestSetup } from './platformFileTestSetup';
 import {
     IncommingProcessorEvents, OutgoingProcessorEvents, Processor, ProcessorBloc, ProcessorFactory
 } from './processor.bloc';
@@ -26,61 +28,8 @@ const StyledApp = styled.div`
   height: 100vh;
 `;
 
-const initialNodes: any[] = [
-  {
-    id: 'node-1',
-    type: 'codeNode',
-    position: { x: 0, y: 0 },
-    data: { code: '{"${fun}":"times"}' },
-  },
-  {
-    id: 'node-6',
-    type: 'jsonParse',
-    position: { x: 0, y: 0 }
-  },
-  {
-    id: 'node-3',
-    type: 'codeNode',
-    position: { x: 0, y: 0 },
-    data: { code: '{"fun":"funner"}', },
-  },
-  {
-    id: 'node-2',
-    type: 'jsonERendererNode',
-    position: { x: 50, y: 0 },
-    data: {},
-  },
-  {
-    id: 'node-5',
-    type: 'jsonERendererNode',
-    position: { x: 100, y: 0 },
-    data: {},
-  },
-  {
-    id: 'node-4',
-    type: 'consoleNode',
-    position: { x: 50, y: 0 },
-    data: {},
-  },
-];
-
-const initialEdges = [
-  {
-    id: 'edge-1',
-    source: 'node-1',
-    target: 'node-2',
-    targetHandle: 'template',
-  },
-  {
-    id: 'edge-2',
-    source: 'node-3',
-    target: 'node-2',
-    targetHandle: 'context',
-  }
-]
-
 class FakeProcessor extends Processor<unknown, unknown, unknown> {
-  public onEvent(event: IncommingProcessorEvents<unknown>): void {
+  public onEvent(event: IncommingProcessorEvents<unknown, unknown>): void {
     console.log('actorEvent', event);
     if (event.type === 'update') {
       this.notifyOutput({ type: 'update', data: (event.data as any).code });
@@ -113,6 +62,7 @@ const ProcessorComp = ({ children }: PropsWithChildren<unknown>) => {
         'jsonERendererNode': new JsonEProcessorFactory(),
         'consoleNode': new ConsoleNodeProcessorFactory(),
         'jsonParse': new JsonParseProcessorFactory(),
+        'platformFile': new PlatformFileNodeProcessorFactory()
       }
     )
     console.log('creating bloc')
@@ -130,8 +80,8 @@ const ProcessorComp = ({ children }: PropsWithChildren<unknown>) => {
 }
 
 export function App() {
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  const [nodes, setNodes, onNodesChange] = useNodesState(platformFileTestSetup.nodes as any);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(platformFileTestSetup.edges);
   const [contextMenu, setContextMenu] = useState<{ x: number, y: number } | null>(null);
 
   const onConnect = useCallback(
@@ -142,7 +92,9 @@ export function App() {
   const nodeTypes = useMemo(() => ({
     codeNode: CodeNode,
     jsonERendererNode: JsonERendererNode,
-    consoleNode: ConsoleNode
+    consoleNode: ConsoleNode,
+    jsonParse: JsonParseNode,
+    platformFile: PlatformFileNode
   }), []);
 
   const handleContextMenu = (event: React.MouseEvent) => {
@@ -172,7 +124,7 @@ export function App() {
             onConnect={onConnect}
             onNodesChange={onNodesChange}
             onEdgesChange={onEdgesChange}
-            style={{ width: '100%', height: '100%', backgroundColor: '#F5F5F5' }}
+            style={{ width: '100%', height: '100%'}}
           >
 
             <MiniMap />

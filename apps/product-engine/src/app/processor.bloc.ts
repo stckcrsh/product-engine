@@ -14,6 +14,11 @@ type Edge = {
   targetHandle?: string | null;
 };
 
+type ProcessorInitEvent<T> = {
+  type: 'init';
+  data: T;
+};
+
 type ProcessorInputEvent<T> = {
   type: 'input';
   handlerId?: string | null;
@@ -57,9 +62,10 @@ type ProcessorErrorEvent = {
   error: Error;
 };
 
-export type IncommingProcessorEvents<InputType> =
-  | ProcessorUpdateEvent<InputType>
+export type IncommingProcessorEvents<Data, InputType> =
+  | ProcessorUpdateEvent<Data>
   | ProcessorInputEvent<InputType>
+  | ProcessorInitEvent<Data>
   | ProcessorPendingInputEvent
   | ProcessorDisconnectEvent;
 
@@ -89,7 +95,7 @@ export abstract class Processor<Data, InputType, OutputType> {
     // need to bind the event handler
     this.onEvent = this.onEvent.bind(this);
   }
-  public abstract onEvent(event: IncommingProcessorEvents<InputType>): void;
+  public abstract onEvent(event: IncommingProcessorEvents<Data, InputType>): void;
 
   protected notifyStart() {
     this.output$.next({ type: 'processorStarted', nodeId: this.nodeId });
@@ -434,7 +440,6 @@ export class ProcessorBloc {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           throw new Error(`Unknown event type ${(event as any).type}`);
       }
-      console.log({ processors: this.processorActors });
     }
 
     this.state = 'idle';

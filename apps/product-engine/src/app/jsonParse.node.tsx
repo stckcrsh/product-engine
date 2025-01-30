@@ -9,7 +9,7 @@ import {
 } from './processor.bloc';
 
 export class JsonParseProcessor extends Processor<{ code: string }, any, any> {
-  public onEvent(event: IncommingProcessorEvents<any>): void {
+  public onEvent(event: IncommingProcessorEvents<any, any>): void {
     if (event.type === 'input') {
       try {
         const data = JSON.parse(event.data);

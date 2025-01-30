@@ -28,7 +28,7 @@ export class JsonEProcessor extends Processor<unknown, any, any> {
   private template: string | null = null;
   private context: Record<string, unknown> | null = null;
 
-  public onEvent(event: IncommingProcessorEvents<any>): void {
+  public onEvent(event: IncommingProcessorEvents<any, any>): void {
     switch (event.type) {
       case 'input': {
         // match the input to the handler: template or context

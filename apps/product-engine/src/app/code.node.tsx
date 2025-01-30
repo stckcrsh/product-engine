@@ -13,7 +13,7 @@ export class CodeNodeProcessor extends Processor<{ code: string }, any, any> {
     super(nodeId, data, output$);
     this.previousOutput = { type: 'processorOutput', nodeId, data: data.code };
   }
-  public onEvent(event: IncommingProcessorEvents<any>): void {
+  public onEvent(event: IncommingProcessorEvents<any, any>): void {
     if (event.type === 'update') {
       this.notifyOutput(event.data.code);
     }

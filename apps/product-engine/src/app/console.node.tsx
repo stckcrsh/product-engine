@@ -5,13 +5,11 @@ import styled from 'styled-components';
 
 import { Handle, Position, useNodeConnections, useNodesData } from '@xyflow/react';
 
+import { NodeLayout } from './nodeLayout.component';
 import {
     IncommingProcessorEvents, OutgoingProcessorEvents, Processor, ProcessorFactory
 } from './processor.bloc';
 
-const NodeWrapper = styled.div`
-  border:1px solid #000;
-`
 const StyledHandle = styled(Handle)`
   position: relative;
   top: 15px;
@@ -25,7 +23,7 @@ const StyledLabel = styled.label`
 `;
 
 export class ConsoleNodeProcessor extends Processor<any, any, any> {
-  public onEvent(event: IncommingProcessorEvents<any>): void {
+  public onEvent(event: IncommingProcessorEvents<any, any>): void {
     if (event.type === 'input') {
       console.log('ConsoleNode: ', event.data)
     }
@@ -54,17 +52,36 @@ export function ConsoleNode() {
   }, [data?.data])
 
   return (
-    <NodeWrapper>
-      <div>
-        <StyledHandle
-          type="target"
-          id="any"
-          position={Position.Left} />
-        <StyledLabel>
-          Any
-        </StyledLabel>
-      </div>
-      CONSOLE
-    </NodeWrapper>
+
+    <NodeLayout
+      slots={{
+        inputs: (
+          <>
+            <StyledHandle
+              type="target"
+              id="any"
+              position={Position.Left} />
+            <StyledLabel>
+              Any
+            </StyledLabel>
+          </>
+        ),
+        outputs: null,
+        preview: (
+          <div>
+            <div>Preview</div>
+            <div>Preview</div>
+            <div>Preview</div>
+            <div>Preview</div>
+            <div>Preview</div>
+          </div>
+        ),
+        heading: (
+          <StyledLabel>
+            Console Node
+          </StyledLabel>
+        )
+      }}
+    />
   );
 }

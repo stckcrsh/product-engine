@@ -2,11 +2,14 @@
   "name": "@product-engine/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps && electron-builder install-app-deps"
+  },
   "private": true,
   "dependencies": {
     "@monaco-editor/react": "^4.6.0",
     "@xyflow/react": "^12.4.1",
+    "chokidar": "^4.0.3",
     "jpex": "^5.3.0",
     "json-e": "^4.8.0",
     "lodash": "^4.17.21",
@@ -47,6 +50,7 @@
     "@types/styled-components": "5.1.26",
     "babel-jest": "^29.7.0",
     "babel-plugin-styled-components": "1.10.7",
+    "electron": "^33.3.0",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "2.31.0",
@@ -55,6 +59,7 @@
     "eslint-plugin-react-hooks": "5.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "jest-environment-node": "^29.7.0",
     "nx": "20.3.2",
     "nx-electron": "^20.0.0",
     "prettier": "^2.6.2",
