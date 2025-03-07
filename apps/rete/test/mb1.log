@@ -1,0 +1,263 @@
+{"level":"info","message":"[mb:2525] mountebank v2.6.0 now taking orders - point your browser to http://localhost:2525/ for help","timestamp":"2025-02-20T21:59:18.111Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T21:59:23.433Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-20T21:59:45.059Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-20T21:59:45.065Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-20T21:59:45.087Z"}
+{"level":"info","message":"[http:1202] ::ffff:127.0.0.1:60878 => GET /data","timestamp":"2025-02-20T21:59:45.094Z"}
+{"level":"info","message":"[http:1202] no predicate match, using default response","timestamp":"2025-02-20T21:59:45.100Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-20T21:59:55.138Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-20T21:59:55.141Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-20T21:59:55.145Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-20T21:59:55.147Z"}
+{"level":"info","message":"[http:1202] ::ffff:127.0.0.1:61095 => GET /data","timestamp":"2025-02-20T21:59:55.151Z"}
+{"level":"info","message":"[http:1202] no predicate match, using default response","timestamp":"2025-02-20T21:59:55.153Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:00:32.768Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-20T22:00:52.485Z"}
+{"level":"error","message":"[mb:2525] error creating imposter: {\"code\":\"EADDRINUSE\",\"errno\":-48,\"syscall\":\"listen\",\"address\":\"::\",\"port\":1202,\"message\":\"listen EADDRINUSE: address already in use :::1202\",\"name\":\"Error\",\"stack\":\"Error: listen EADDRINUSE: address already in use :::1202\\n    at Server.setupListenHandle [as _listen2] (node:net:1872:16)\\n    at listenInCluster (node:net:1920:12)\\n    at Server.listen (node:net:2008:7)\\n    at /opt/homebrew/lib/node_modules/mountebank/src/models/http/baseHttpServer.js:171:20\\n    at new Promise (<anonymous>)\\n    at create (/opt/homebrew/lib/node_modules/mountebank/src/models/http/baseHttpServer.js:155:16)\\n    at Object.createServer (/opt/homebrew/lib/node_modules/mountebank/src/models/protocols.js:23:34)\\n    at /opt/homebrew/lib/node_modules/mountebank/src/models/imposter.js:175:22\\n    at new Promise (<anonymous>)\\n    at Object.create (/opt/homebrew/lib/node_modules/mountebank/src/models/imposter.js:169:12)\"}","timestamp":"2025-02-20T22:00:52.492Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-20T22:00:52.494Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-20T22:00:52.496Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:00:59.321Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:01:00.641Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-20T22:01:37.573Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-20T22:01:37.577Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-20T22:01:37.578Z"}
+{"level":"info","message":"[http:1202] ::ffff:127.0.0.1:63051 => GET /data","timestamp":"2025-02-20T22:01:37.583Z"}
+{"level":"info","message":"[http:1202] no predicate match, using default response","timestamp":"2025-02-20T22:01:37.584Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:01:54.244Z"}
+{"level":"info","message":"[mb:2525] GET /images/book.jpg","timestamp":"2025-02-20T22:03:19.042Z"}
+{"level":"info","message":"[mb:2525] GET /images/book.jpg","timestamp":"2025-02-20T22:03:21.541Z"}
+{"level":"info","message":"[mb:2525] GET /images/book.jpg","timestamp":"2025-02-20T22:03:23.231Z"}
+{"level":"info","message":"[mb:2525] GET /images/book.jpg","timestamp":"2025-02-20T22:03:28.672Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:06:08.012Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-20T22:08:51.903Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-20T22:08:51.908Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-20T22:08:51.914Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-20T22:08:52.041Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:09:12.895Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-20T22:09:41.658Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-20T22:09:41.688Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-20T22:09:41.738Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-20T22:09:41.853Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:10:30.811Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:12:51.017Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:12:52.461Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:12:53.470Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:12:54.628Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-20T22:13:06.803Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-20T22:13:06.828Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-20T22:13:06.843Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-20T22:13:06.954Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-20T22:13:16.234Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-20T22:13:16.249Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:13:18.528Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:13:33.127Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:13:34.277Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-20T22:14:27.499Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-20T22:14:28.655Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-20T22:14:28.715Z"}
+{"level":"info","message":"[http:1202] ::ffff:127.0.0.1:51316 => GET /data","timestamp":"2025-02-20T22:14:28.749Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:15:03.857Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-20T22:17:41.473Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-20T22:17:41.540Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:17:44.564Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:17:57.255Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:17:58.039Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:17:58.658Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:17:59.483Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:18:52.311Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:18:54.498Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-20T22:19:42.671Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-20T22:19:45.479Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-20T22:19:45.576Z"}
+{"level":"info","message":"[http:1202] ::ffff:127.0.0.1:63226 => GET /data","timestamp":"2025-02-20T22:19:45.648Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:20:52.328Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-20T22:21:47.436Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-20T22:21:47.473Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:22:01.212Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-20T22:23:00.367Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-20T22:24:40.788Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:42:05.120Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:42:06.095Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-20T22:42:11.186Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-20T22:43:19.752Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-20T22:44:09.683Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-20T22:44:13.917Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-20T22:44:13.956Z"}
+{"level":"info","message":"[http:1202] ::ffff:127.0.0.1:62447 => GET /data","timestamp":"2025-02-20T22:44:22.844Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:44:28.239Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-20T22:45:29.849Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-20T22:45:29.851Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:45:42.730Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:45:43.639Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-20T22:47:04.514Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-20T22:47:06.097Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-20T22:47:06.157Z"}
+{"level":"info","message":"[http:1202] ::ffff:127.0.0.1:65507 => GET /data","timestamp":"2025-02-20T22:47:06.909Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-20T22:47:07.804Z"}
+{"level":"info","message":"[http:1202] ::ffff:127.0.0.1:58051 => GET /data","timestamp":"2025-02-21T00:58:28.562Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T00:58:59.800Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T00:58:59.803Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T00:59:11.425Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T00:59:29.617Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:00:33.891Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:00:44.128Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:00:44.132Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:00:46.760Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:01:01.127Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:01:01.135Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:01:05.591Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:02:45.100Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:02:46.794Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:02:46.796Z"}
+{"level":"info","message":"[http:1202] ::1:63878 => GET /data","timestamp":"2025-02-21T01:03:17.628Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:03:46.762Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:03:46.848Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:03:48.005Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:03:48.007Z"}
+{"level":"info","message":"[http:1202] ::1:64622 => GET /data","timestamp":"2025-02-21T01:03:48.654Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:03:49.575Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:04:34.274Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:04:34.275Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:04:34.279Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:04:34.281Z"}
+{"level":"info","message":"[http:1202] ::1:49183 => GET /data","timestamp":"2025-02-21T01:04:34.300Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:04:34.319Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:04:43.677Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:06:58.498Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:06:58.499Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:06:58.504Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:06:58.508Z"}
+{"level":"info","message":"[http:1202] ::1:52070 => GET /data","timestamp":"2025-02-21T01:06:58.534Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:06:58.546Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:07:05.028Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:07:05.029Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:07:05.031Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:07:05.038Z"}
+{"level":"info","message":"[http:1202] ::1:52217 => GET /data","timestamp":"2025-02-21T01:07:05.053Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:07:05.062Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:11:57.760Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:11:57.764Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:11:57.780Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:11:57.783Z"}
+{"level":"info","message":"[http:1202] ::1:58415 => GET /data","timestamp":"2025-02-21T01:11:57.814Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:11:57.828Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:12:02.972Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:12:02.975Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:12:02.987Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:12:02.993Z"}
+{"level":"info","message":"[http:1202] ::1:58518 => GET /data","timestamp":"2025-02-21T01:12:03.024Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:12:03.035Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:12:47.233Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:12:47.234Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:12:47.235Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:12:47.236Z"}
+{"level":"info","message":"[http:1202] ::1:59401 => GET /data","timestamp":"2025-02-21T01:12:47.258Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:12:47.265Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:12:55.537Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:12:55.538Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:12:55.541Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:12:55.545Z"}
+{"level":"info","message":"[http:1202] ::1:59567 => GET /data","timestamp":"2025-02-21T01:12:55.561Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:12:55.566Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:26:37.640Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:26:37.644Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:26:37.647Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:26:37.650Z"}
+{"level":"info","message":"[http:1202] ::1:64704 => GET /data","timestamp":"2025-02-21T01:26:37.678Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:26:37.691Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:26:38.828Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:26:38.829Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:26:38.835Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:26:38.839Z"}
+{"level":"info","message":"[http:1202] ::1:64715 => GET /data","timestamp":"2025-02-21T01:26:38.854Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:26:38.860Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:26:47.948Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:26:47.949Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:26:47.953Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:26:47.962Z"}
+{"level":"info","message":"[http:1202] ::1:64879 => GET /data","timestamp":"2025-02-21T01:26:47.986Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:26:47.996Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:29:05.889Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:29:05.890Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:29:05.891Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:29:05.892Z"}
+{"level":"info","message":"[http:1202] ::1:51075 => GET /data","timestamp":"2025-02-21T01:29:05.923Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:29:05.930Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:29:07.145Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:29:07.145Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:29:07.146Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:29:07.147Z"}
+{"level":"info","message":"[http:1202] ::1:51105 => GET /data","timestamp":"2025-02-21T01:29:07.158Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:29:07.163Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:29:08.549Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:29:08.550Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:29:08.551Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:29:08.552Z"}
+{"level":"info","message":"[http:1202] ::1:51120 => GET /data","timestamp":"2025-02-21T01:29:08.560Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:29:08.565Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:29:09.910Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:29:09.910Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:29:09.911Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:29:09.915Z"}
+{"level":"info","message":"[http:1202] ::1:51155 => GET /data","timestamp":"2025-02-21T01:29:09.925Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:29:09.930Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:29:11.328Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:29:11.329Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:29:11.333Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:29:11.342Z"}
+{"level":"info","message":"[http:1202] ::1:51178 => GET /data","timestamp":"2025-02-21T01:29:11.356Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:29:11.365Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:29:11.995Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:29:11.996Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:29:11.997Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:29:11.998Z"}
+{"level":"info","message":"[http:1202] ::1:51195 => GET /data","timestamp":"2025-02-21T01:29:12.008Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:29:12.014Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:29:12.321Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:29:12.322Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:29:12.323Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:29:12.324Z"}
+{"level":"info","message":"[http:1202] ::1:51196 => GET /data","timestamp":"2025-02-21T01:29:12.358Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:29:12.364Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:29:16.424Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:29:16.424Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:29:16.425Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:29:16.426Z"}
+{"level":"info","message":"[http:1202] ::1:51275 => GET /data","timestamp":"2025-02-21T01:29:16.435Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:29:16.440Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:35:11.105Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:35:11.107Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:35:11.111Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:35:11.142Z"}
+{"level":"info","message":"[http:1202] ::1:57780 => GET /data","timestamp":"2025-02-21T01:35:11.166Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:35:11.177Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:36:53.596Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:36:53.601Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:36:53.608Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:36:53.617Z"}
+{"level":"info","message":"[http:1202] ::1:59620 => GET /data","timestamp":"2025-02-21T01:36:53.643Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:36:53.672Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:37:23.454Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:37:23.457Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:37:23.459Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:37:23.460Z"}
+{"level":"info","message":"[http:1202] ::1:60169 => GET /data","timestamp":"2025-02-21T01:37:23.491Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:37:23.503Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:50:57.532Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:50:57.538Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:50:57.555Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:50:57.592Z"}
+{"level":"info","message":"[http:1202] ::1:58765 => GET /data","timestamp":"2025-02-21T01:50:57.649Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:50:57.666Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:51:18.177Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:53:34.238Z"}
+{"level":"info","message":"[mb:2525] DELETE /imposters/1202","timestamp":"2025-02-21T01:54:18.907Z"}
+{"level":"info","message":"[http:1202] Ciao for now","timestamp":"2025-02-21T01:54:18.927Z"}
+{"level":"info","message":"[mb:2525] POST /imposters","timestamp":"2025-02-21T01:54:18.952Z"}
+{"level":"info","message":"[http:1202] Open for business...","timestamp":"2025-02-21T01:54:18.964Z"}
+{"level":"info","message":"[http:1202] ::1:62285 => GET /data","timestamp":"2025-02-21T01:54:19.040Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:54:19.522Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T01:54:25.575Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T02:01:00.031Z"}
+{"level":"info","message":"[mb:2525] GET /imposters/1202","timestamp":"2025-02-21T02:01:09.102Z"}
+{"level":"info","message":"[mb:2525] Adios - see you soon?","timestamp":"2025-02-21T15:51:55.472Z"}

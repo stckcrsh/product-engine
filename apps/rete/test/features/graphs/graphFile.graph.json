@@ -1,0 +1,74 @@
+{
+  "nodes": [
+    {
+      "id": "templateNode",
+      "label": "Template Text",
+      "type":"Text",
+      "data": [
+        {
+          "key": "value",
+          "value": "{\"fun\":\"${name}\"}"
+        }
+      ]
+    },
+    {
+      "id": "parseNode1",
+      "label": "JsonParse",
+      "type":"JsonParse",
+      "data": []
+    },
+    {
+      "id": "parseNode2",
+      "label": "JsonParse",
+      "type":"JsonParse",
+      "data": []
+    },
+    {
+      "id": "textNode",
+      "label": "Variables",
+      "type":"Text",
+      "data": [
+        {
+          "key": "value",
+          "value": "{\"name\":\"John\"}"
+        }
+      ]
+    },
+    {
+      "id": "jsonERendererNode",
+      "label": "result",
+      "type":"JsonE",
+      "data": []
+    }
+  ],
+  "connections": [
+    {
+      "id": "bdf10b9ff8dfabf2",
+      "source": "templateNode",
+      "sourceOutput": "value",
+      "target": "parseNode1",
+      "targetInput": "text"
+    },
+    {
+      "id": "3ddf44d5bb405464",
+      "source": "parseNode1",
+      "sourceOutput": "value",
+      "target": "jsonERendererNode",
+      "targetInput": "template"
+    },
+    {
+      "id": "9b850ef219080fc9",
+      "source": "textNode",
+      "sourceOutput": "value",
+      "target": "parseNode2",
+      "targetInput": "text"
+    },
+    {
+      "id": "4e6be9f4c81379f0",
+      "source": "parseNode2",
+      "sourceOutput": "value",
+      "target": "jsonERendererNode",
+      "targetInput": "context"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "rete-pe-nodes",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/rete/nodes/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/rete/nodes",
+        "main": "apps/rete/nodes/src/index.ts",
+        "tsConfig": "apps/rete/nodes/tsconfig.lib.json",
+        "assets": ["apps/rete/nodes/*.md"]
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "name": "rete-pe-test",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/rete/test/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/rete/test",
+        "format": ["cjs"],
+        "bundle": false,
+        "main": "apps/rete/test/src/main.ts",
+        "tsConfig": "apps/rete/test/tsconfig.app.json",
+        "assets": ["apps/rete/test/src/assets"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "rete-pe-test:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "rete-pe-test:build:development"
+        },
+        "production": {
+          "buildTarget": "rete-pe-test:build:production"
+        }
+      }
+    },
+    "builder":{
+      "executor":"nx:run-commands",
+      "options": {
+        "cwd": "apps/rete/test",
+        "commands":[
+          "tsc -p ./tsconfig.app.json && tsc-alias -p ./tsconfig.app.json"
+        ]
+      }
+    },
+    "run": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["builder"],
+      "options": {
+        "cwd": "apps/rete/test",
+        "commands": [
+          "cucumber-js --require ./dist/apps/rete/test/features/step_definitions --format html:report.html"
+        ]
+      }
+    },
+    "test": {
+      "options": {
+        "passWithNoTests": true
+      }
+    }
+  }
+}

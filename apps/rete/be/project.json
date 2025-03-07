@@ -1,0 +1,59 @@
+{
+  "name": "rete-pe-be",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/rete/be/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "nx-electron:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/rete/be",
+        "main": "apps/rete/be/src/main.ts",
+        "tsConfig": "apps/rete/be/tsconfig.app.json",
+        "assets": ["apps/rete/be/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/rete/be/src/environments/environment.ts",
+              "with": "apps/rete/be/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "nx-electron:execute",
+      "options": {
+        "buildTarget": "rete-pe-be:build"
+      }
+    },
+    "package": {
+      "executor": "nx-electron:package",
+      "options": {
+        "name": "rete-pe-be",
+        "frontendProject": "rete-pe-ui",
+        "sourcePath": "dist/apps",
+        "outputPath": "dist/packages",
+        "prepackageOnly": true
+      }
+    },
+    "make": {
+      "executor": "nx-electron:make",
+      "options": {
+        "name": "rete-pe-be",
+        "frontendProject": "rete-pe-ui",
+        "sourcePath": "dist/apps",
+        "outputPath": "dist/executables"
+      }
+    },
+    "lint": {
+      "command": "eslint apps/rete/be/**/*.ts"
+    }
+  }
+}
