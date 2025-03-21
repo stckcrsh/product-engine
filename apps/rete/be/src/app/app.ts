@@ -3,6 +3,7 @@ import { join } from 'path';
 import { format } from 'url';
 
 import { environment } from '../environments/environment';
+import { AxonService } from './axon.service';
 import { ConfigService } from './config.service';
 import { rendererAppName, rendererAppPort } from './constants';
 import { FileWatcherService } from './fileWatcher.service';
@@ -58,12 +59,12 @@ export default class App {
     const configService = new ConfigService();
     await configService.loadConfig();
 
-    const fileWatcher = new FileWatcherService(
-      configService
-    );
+    const fileWatcher = new FileWatcherService(configService);
 
     const projectService = new ProjectService();
+    const axonService = new AxonService();
 
+    axonService.setupEvents();
     configService.setupEvents();
     fileWatcher.setupEvents(App.mainWindow);
     projectService.setupEvents();
@@ -171,5 +172,6 @@ export default class App {
       }
     );
     // ===========
+
   }
 }

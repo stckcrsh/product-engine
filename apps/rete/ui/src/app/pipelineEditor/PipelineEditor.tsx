@@ -11,6 +11,8 @@ import styled from 'styled-components';
 
 import { NodeFactory } from '@product-engine/rete-pe-nodes';
 
+import { AppBloc } from '../app.bloc';
+import { axonService } from '../AxonService';
 import { ElectronFileLoader } from '../ElectronFileLoader';
 import { ElectronPolicyExecutor } from '../electronPolicyExecutor';
 import { StreamBuilder, StreamStatus } from '../StreamBuilder';
@@ -61,12 +63,14 @@ const ProjectHeaderRight = styled.div`
  */
 export const PipelineEditor = () => {
   const editorBloc = useResolve<PipelineEditorBloc>(PIPELINE_EDITOR_BLOC_DI_ID);
+  const appBloc = useResolve<AppBloc>('bloc');
 
   return (
 
     <ProjectWrapper>
       <ProjectHeader>
         <ProjectHeaderLeft>
+          <button onClick={() => appBloc.goBack()}>&lt;</button>
           <StreamBuilder stream$={editorBloc.state$.pipe(map(state => state.project))}>
             {({ data: project, status }) => {
               if (status === StreamStatus.pending || project == null) {
@@ -176,9 +180,10 @@ export default ({ project }: { project?: string }) => {
         const PolicyService = new ElectronPolicyExecutor();
         jpex.constant('PolicyExecuter', PolicyService);
         jpex.constant('PolicyValidator', PolicyService);
+        jpex.constant('AxonService', axonService);
 
 
-        jpex.service('NodeFactory', ['processEngine', 'FileLoader', 'PolicyExecuter', 'PolicyValidator'], NodeFactory)
+        jpex.service('NodeFactory', ['processEngine', 'FileLoader', 'PolicyExecuter', 'PolicyValidator', 'AxonService'], NodeFactory)
 
         // Setting up the main blocs
         jpex.service<PipelineGraphBloc>(PIPELINE_GRAPH_BLOC_DI_ID, [EDITOR_DI_ID, 'NodeFactory'], PipelineGraphBloc, { lifecycle: 'container' });

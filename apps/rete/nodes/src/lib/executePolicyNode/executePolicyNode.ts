@@ -1,5 +1,7 @@
 import { ClassicPreset } from 'rete';
 
+import { processInput } from '../utils';
+
 const socket = new ClassicPreset.Socket('socket');
 export const EXECUTE_POLICY_NODE = 'ExecutePolicy';
 
@@ -17,10 +19,6 @@ export interface PolicyExecutor {
   ) => Promise<{ result: any; calls: any }>;
   destroy: () => Promise<void>;
 }
-
-const processInput = <T>(input?: T[]) => {
-  return input && input.length > 0 ? input[0] : undefined;
-};
 
 /**
  * This is a source node that a user enters in a file path and the engine loads the file

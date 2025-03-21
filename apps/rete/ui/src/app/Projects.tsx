@@ -23,9 +23,10 @@ export const Projects = encase(['bloc'], (bloc: AppBloc) => () => {
 
   const handleCreateProject = async () => {
     await projectService.createProject(state.newProjectName);
-
+    const projects = await projectService.getProjects();
     setState((state: any) => ({
       ...state,
+      projects,
       isCreateModalOpen: false,
       newProjectName: ''
     }));
@@ -56,6 +57,13 @@ export const Projects = encase(['bloc'], (bloc: AppBloc) => () => {
 
   const deleteProject = async (project: string) => {
     await projectService.deleteProject(project);
+    const projects = await projectService.getProjects();
+    setState((state: any) => ({
+      ...state,
+      projects,
+      isCreateModalOpen: false,
+      newProjectName: ''
+    }));
   }
 
   if (state.state === 'loading') {

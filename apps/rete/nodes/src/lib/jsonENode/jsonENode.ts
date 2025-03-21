@@ -35,7 +35,8 @@ export class JsonENode extends ClassicPreset.Node {
     }
 
     try {
-      return Promise.resolve({ value: jsone(template[0], context[0]) });
+      // TODO: Put in uuid generator in here correctly
+      return Promise.resolve({ value: jsone(template[0], {...context[0], uuid: () => 49 })});
     } catch (e) {
       console.error('Error Processing JsonE:', e);
       throw e;

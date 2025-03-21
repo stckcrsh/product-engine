@@ -30,10 +30,15 @@ interface Projects {
   deleteProject: (projectId: string) => Promise<void>;
 }
 
+interface Axon {
+  query: (expression: string, context: any) => Promise<any>;
+}
+
 export interface ElectronWindow extends Window {
   electron: ElectronAPI;
   fileSystemApi: FileSystemAPI;
   rexGo: RexGo;
   config: Config;
   projects: Projects;
+  axon: Axon;
 }

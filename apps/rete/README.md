@@ -17,6 +17,8 @@ This will start the be and the ui and open the electron app.
 - **Panel**: A panel is a view that is used to display the data from the graph.  This can be a json viewer, a graph viewer, a text editor, etc.
 
 ## TODOs
+- [ ] better page navigation
+- [ ] refreshing the projects when creating a new one
 - [ ] Cloning an existing project - so we dont have to start from scratch
 - [ ] Set up a logging system for the nodes
 - [ ] Cleanup on node removal (things like file watchers)
@@ -33,7 +35,11 @@ This will start the be and the ui and open the electron app.
   - [X] Writing project files
 
 ### Nodes
+- [ ] Better socket visualizations, denoting different types like number, string, object, jsonNode, etc
+  - [ ] Validating connections between sockets so that they match correctly
+- [x] jmespath/axon node
 - [ ] Custom node visualization - just a better ui for the nodes
+  - [ ] resizing nodes so we can see things like the monaco editor better
 - [ ] Deleting nodes in the graph
 - [X] Editing Node labels
 - [ ] File loader node is having some race condition issues. especially on load
@@ -41,29 +47,44 @@ This will start the be and the ui and open the electron app.
 - [ ] Template_var node
 - [ ] Merge node
 - [ ] Template_context node
-- [ ] Json Schema validator node
+- [x] Json Schema validator node
+- [x] Axon Node
+- [x] JSONe Node
+  - [ ] Generate a uuid helper function (There is a todo in the jsone node)
+- [ ] Jslt node
 - [x] Policy Validator
 - [X] Controls and views dont update between panel and node
-
+- [ ] Showing data fetching errors in the graphUI somehow - like making the node red with a tooltip (things like file not found, or jsonParse errors)
+- [ ] Showing data fetching errors in the dashboards
+- [x] Text Node
+  - [ ] Add control to parse data to json (This is to remove extraneous jsonParse nodes)
+- [x] File loader node
+  - [ ] Add control to parse data to json (This is to remove extraneous jsonParse nodes)
 
 ### Output Panels
-- [ ] JSON Viewer with path filtering (json path or axon)
+- [ ] JSON Viewer with path filtering (json path, jmespath/axon)
 - [ ] Switch react-json-view to react-json-view-lite
-- [ ] policy graph isnt always working, has a race condition where we need to hit toggle to get it to show
 - [ ] Monaco output panel should be readonly
-- [X] Policy graph viewer
+- [x] Policy graph viewer
   - [ ] Policy graph needs to be a solid svg so that we can mess with the proportions to fit better
+  - [ ] policy graph isnt always working, has a race condition where we need to hit toggle to get it to show
+  - [ ] dialogs in policy graph to see details about a node (tooltips for errors, etc)
 
 ### Control Panels
 - [x] Monaco editor
 
 ### Projects
 - [ ] Working with external projects (json files outside of the local storage)
+- [ ] Exporting tarballs of files so that other people can import them
 
 
 ## There has to be a difference between UI nodes and CI nodes
 The rete node processing needs to work different between UI and CI.  There are things that need to exist like the merge node creating new sockets
-when a connection happens.  These things are very specific to the UI and connection creation which doesnt exist on the CI side.
+when a connection happens.  These things are very specific to the UI and connection creation which doesnt exist on the CI side. The shared nodes library needs to be
+a specification repository that can be used to make sure that nodes that work between backend and frontend are the same.  This will allow us to have a shared library.
+
+In the future we need to figure out how to make the processing run in the background and the frontend just shows the nodes and connections.  And all processing will be 
+done behind the scenes in a worker thread.  All information will be passed to the frontend through some kind of channel like a websocket or something.
 
 
 # Node Ideas
@@ -80,4 +101,18 @@ This node takes in a dynamic number of inputs and merges them into a single outp
 This is like a merge node but it instead puts each of the incoming template vars into a named key in the output. The inputs will need to all be template_var nodes.
 This could also take in a schema file in a control for each incoming connection to validate the incoming data. This could be just a collection of nodes like a subnode or in the rete
 documentation this is called a module.
+
+## Jslt node
+This node will take in a json object and a jslt template and output the result of the jslt template.  This will allow us to use jslt templates to transform json objects.
+
+## Json Schema validator node
+This node will take in a json object and a json schema and output whether the json object is valid against the schema.  This will allow us to validate json objects against a schema.
+
+## Axon Node
+This node will take in an expression string and a context object and return the resulting value and the full axon result object.  This will allow us to use axon expressions to transform data.
+
+# Panel Ideas
+## JSON Viewer with path filtering (json path, jmespath/axon)
+This panel will take in a json object and allow you to filter the json object by a json path or a jmespath/axon query.  This will allow you to view only the parts of the json object that you are interested in.
+This could be an extension to the json viewer that we already have.
 

@@ -1,5 +1,11 @@
 import { contextBridge, ipcRenderer } from 'electron';
 
+contextBridge.exposeInMainWorld('axon', {
+  query: (expression: string, context: any) => {
+    return ipcRenderer.invoke('axonQuery', expression, context);
+  },
+});
+
 contextBridge.exposeInMainWorld('electron', {
   getAppVersion: () => ipcRenderer.invoke('get-app-version'),
   platform: process.platform,
@@ -35,3 +41,4 @@ contextBridge.exposeInMainWorld('projects', {
     ipcRenderer.invoke('saveProject', projectId, graph, ui),
   deleteProject: (projectId: string) => ipcRenderer.invoke('deleteProject', projectId),
 })
+

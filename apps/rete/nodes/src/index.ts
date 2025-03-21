@@ -5,5 +5,7 @@ export * from './lib/fileLoaderNode';
 export * from './lib/executePolicyNode';
 export * from './lib/mergeNode';
 export * from './lib/validatePolicyNode';
+export * from './lib/axonNode';
+export * from './lib/jsonSchemaNode';
 
 export * from './lib/nodeFactory';

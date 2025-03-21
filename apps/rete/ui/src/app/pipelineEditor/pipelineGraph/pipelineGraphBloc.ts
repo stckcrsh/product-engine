@@ -9,8 +9,9 @@ import { Presets, ReactPlugin } from 'rete-react-plugin';
 import { ReactArea2D } from 'rete-react-render-plugin';
 
 import {
-    EXECUTE_POLICY_NODE, FILE_LOADER_NODE, FileControl, JSON_PARSE_NODE, JSONE_NODE, MERGE_NODE,
-    MonacoControl, NodeFactory, TEXT_NODE, VALIDATE_POLICY_NODE
+    AXON_NODE, EXECUTE_POLICY_NODE, FILE_LOADER_NODE, FileControl, JSON_PARSE_NODE,
+    JSON_SCHEMA_NODE, JSONE_NODE, MERGE_NODE, MonacoControl, NodeFactory, TEXT_NODE,
+    VALIDATE_POLICY_NODE
 } from '@product-engine/rete-pe-nodes';
 
 import { FileControlView, MonacoControlView } from '../../editor';
@@ -143,6 +144,8 @@ export class PipelineGraphBloc {
         ],
         ['MergeNode', () => this.nodeFactory.createNode(MERGE_NODE)],
         ['ValidatePolicy', () => this.nodeFactory.createNode(VALIDATE_POLICY_NODE)],
+        ['AxonNode', () => this.nodeFactory.createNode(AXON_NODE)],
+        ['JsonSchemaNode', () => this.nodeFactory.createNode(JSON_SCHEMA_NODE)],
       ]),
     });
 

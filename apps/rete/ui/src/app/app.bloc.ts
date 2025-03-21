@@ -50,6 +50,15 @@ export class AppBloc {
     this._state$.next(newState);
   }
 
+  public goBack(){
+    const currentState = this._state$.getValue();
+    if(currentState.page === 'project'){
+      this.updateState((state) => {
+        state.page = 'projects';
+      });
+    }
+  }
+
   public savePlatformRepoPath(platformRepoPath: string) {
     return configService.set('platformRepoPath', platformRepoPath).then(() => {
       this.updateState((state) => {

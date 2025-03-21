@@ -8,7 +8,7 @@ module.exports = {
     path: join(__dirname, '../../../dist/apps/rete/ui'),
   },
   devServer: {
-    port: 4200,
+    port: 4301,
     historyApiFallback: {
       index: '/index.html',
       disableDotRule: true,

@@ -1,11 +1,13 @@
 import { ClassicPreset } from 'rete';
 
+import { AXON_NODE, AxonNode, AxonService } from './axonNode';
 import {
     EXECUTE_POLICY_NODE, ExecutePolicyNode, PolicyExecutor
 } from './executePolicyNode/executePolicyNode';
 import { FILE_LOADER_NODE, FileLoader, FileLoaderNode } from './fileLoaderNode';
 import { JSONE_NODE, JsonENode } from './jsonENode';
 import { JSON_PARSE_NODE, JsonParseNode } from './jsonParseNode';
+import { JSON_SCHEMA_NODE, JsonSchemaNode } from './jsonSchemaNode';
 import { MERGE_NODE, MergeNode } from './mergeNode';
 import { TEXT_NODE, TextNode } from './textNode';
 import { PolicyValidator, VALIDATE_POLICY_NODE, ValidatePolicyNode } from './validatePolicyNode';
@@ -37,7 +39,8 @@ export class NodeFactory {
     onChange: () => void,
     fileLoader: FileLoader,
     policyExecutor: PolicyExecutor,
-    policyValidator: PolicyValidator
+    policyValidator: PolicyValidator,
+    axonService: AxonService
   ) {
     this.nodeFactories = {
       [EXECUTE_POLICY_NODE]: () => {
@@ -73,6 +76,12 @@ export class NodeFactory {
       },
       [VALIDATE_POLICY_NODE]: () => {
         return new ValidatePolicyNode(policyValidator);
+      },
+      [AXON_NODE]: () => {
+        return new AxonNode(axonService);
+      },
+      [JSON_SCHEMA_NODE]: () => {
+        return new JsonSchemaNode();
       }
     };
   }

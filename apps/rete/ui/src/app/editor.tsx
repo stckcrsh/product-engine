@@ -39,7 +39,7 @@ export function MonacoControlView(props: { data: MonacoControl }) {
   };
 
   return (
-    <Editor value={inputValue} onChange={handleChange} />
+    <Editor defaultLanguage="json" value={inputValue} onChange={handleChange} />
   );
 }
 
@@ -171,43 +171,6 @@ export const createEditor = (listener: Listener, editor: NodeEditor<Schemes>, en
 
     return context;
   });
-
-  // const fileNode = new FileLoaderNode("product-type/smb-credit-card/amt-product-config-bff/data-sources/line_assignment_attributes.json", fileLoader, process);
-  // fileNode.id = "fileNode";
-  // await editor.addNode(fileNode);
-
-  // const parseNode1 = new JsonParseNode();
-  // parseNode1.id = "parseNode1";
-  // await editor.addNode(parseNode1);
-
-  // const parseNode2 = new JsonParseNode();
-  // parseNode2.id = "parseNode2";
-  // await editor.addNode(parseNode2);
-
-  // const textNode = new TextNode("{}", process);
-  // textNode.id = "textNode";
-  // await editor.addNode(textNode);
-
-  // const jsonERendererNode = new JsonENode();
-  // jsonERendererNode.id = "jsonERendererNode";
-  // await editor.addNode(jsonERendererNode);
-
-  // // connect nodes
-  // const con1 = new ClassicPreset.Connection(fileNode, "file", parseNode1, "text");
-  // const con2 = new ClassicPreset.Connection(parseNode1, "value", jsonERendererNode, "template");
-  // const con3 = new ClassicPreset.Connection(textNode, "value", parseNode2, "text");
-  // const con4 = new ClassicPreset.Connection(parseNode2, "value", jsonERendererNode, "context");
-
-  // await editor.addConnection(con1 as any);
-  // await editor.addConnection(con2 as any);
-  // await editor.addConnection(con3 as any);
-  // await editor.addConnection(con4 as any);
-
-  // await area.translate(textNode.id, { x: 0, y: 0 });
-  // await area.translate(parseNode1.id, { x: 270, y: 0 });
-  // await area.translate(parseNode2.id, { x: 540, y: 0 });
-  // await area.translate(jsonERendererNode.id, { x: 810, y: 0 });
-  // await area.translate(fileNode.id, { x: 0, y: 200 });
 
   console.log(editor.getNodes().map((node) =>
   ({
