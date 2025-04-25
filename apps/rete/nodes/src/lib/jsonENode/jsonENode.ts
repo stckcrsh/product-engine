@@ -1,6 +1,8 @@
 import jsone from 'json-e';
 import { ClassicPreset } from 'rete';
 
+import { processInput } from '../utils';
+
 const socket = new ClassicPreset.Socket('socket');
 
 export const JSONE_NODE = 'JsonE';
@@ -24,19 +26,23 @@ export class JsonENode extends ClassicPreset.Node {
   }): Promise<{ value: any }> {
     const { template, context } = inputs;
 
-    if (!template || !this.validateTemplate(template[0])) {
+    const contextInput = processInput(context, {});
+    const templateInput = processInput(template);
+
+
+    if (!templateInput || !this.validateTemplate(templateInput)) {
       console.error('Invalid template:', template);
       throw new Error(`Invalid template: ${template}`);
     }
 
-    if (!context || !this.validateContext(context[0])) {
+    if (!contextInput && !this.validateContext(contextInput)) {
       console.error('Invalid context:', context);
       throw new Error(`Invalid context: ${context}`);
     }
 
     try {
       // TODO: Put in uuid generator in here correctly
-      return Promise.resolve({ value: jsone(template[0], {...context[0], uuid: () => 49 })});
+      return Promise.resolve({ value: jsone(templateInput, {...contextInput, uuid: () => 49 })});
     } catch (e) {
       console.error('Error Processing JsonE:', e);
       throw e;

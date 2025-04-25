@@ -47,6 +47,8 @@ This will start the be and the ui and open the electron app.
 - [ ] Template_var node
 - [ ] Merge node
 - [ ] Template_context node
+- [ ] Yaml node
+- [ ] Json5 support for text node
 - [x] Json Schema validator node
 - [x] Axon Node
 - [x] JSONe Node

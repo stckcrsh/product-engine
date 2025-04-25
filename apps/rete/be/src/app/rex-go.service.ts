@@ -4,7 +4,19 @@ import { MBService } from './mb.service';
 
 const REX_GO_URL = 'http://localhost:8070';
 
-const DataEndpoint = [
+const createDatasource = (name: string) => {
+  return {
+    dataRef: `http://localhost:1202/data/${name}`,
+    dictionary: [],
+    displayName: 'UDX CREDIT BUREAU HARD PULL',
+    dynamic: false,
+    restricted: false,
+    selfRef: `http://localhost:1202/dictionary/${name}`,
+    service: name,
+  };
+};
+
+const DataEndpoint =
   {
     dataRef: 'http://localhost:1202/data/udx_credit_bureau_hard_pull',
     dictionary: [],
@@ -13,18 +25,19 @@ const DataEndpoint = [
     restricted: false,
     selfRef: 'http://localhost:1202/dictionary/udx_credit_bureau_hard_pull',
     service: 'udx_credit_bureau_hard_pull',
-  },
-];
+  }
 
 export class RexGoService {
   constructor(private mbService: MBService) {}
 
-  async validatePolicy(policy: Record<string, any>): Promise<{result: Record<string, any>, errors?: any}> {
+  async validatePolicy(
+    policy: Record<string, any>
+  ): Promise<{ result: Record<string, any>; errors?: any }> {
     try {
-    const result = await axios.put(`${REX_GO_URL}/policy/validate`, policy);
-    return {
-      result: result.data,
-    };
+      const result = await axios.put(`${REX_GO_URL}/policy/validate`, policy);
+      return {
+        result: result.data,
+      };
     } catch (e) {
       console.log('Error validating policy', e);
 
@@ -33,7 +46,6 @@ export class RexGoService {
         errors: e.response.data,
       };
     }
-
   }
 
   async executePolicy(config: {
@@ -86,6 +98,11 @@ export class RexGoService {
       ],
     }));
 
+    const mainDatasource = [
+      DataEndpoint,
+      ...Object.keys(datasources).map((key) => createDatasource(key)),
+    ]
+
     // setup the datasources
     await this.mbService.createImposter({
       port: 1202,
@@ -103,7 +120,7 @@ export class RexGoService {
           responses: [
             {
               is: {
-                body: JSON.stringify(DataEndpoint),
+                body: JSON.stringify(mainDatasource),
               },
             },
           ],

@@ -38,8 +38,12 @@ export function MonacoControlView(props: { data: MonacoControl }) {
     props.data.setValue(value || ''); // Update control object
   };
 
+  const handleMount = (editor: any, monaco: any) => {
+    editor.updateOptions({ tabSize: 2 });
+  }
+
   return (
-    <Editor defaultLanguage="json" value={inputValue} onChange={handleChange} />
+    <Editor defaultLanguage="json" value={inputValue} onChange={handleChange} onMount={handleMount}/>
   );
 }
 
