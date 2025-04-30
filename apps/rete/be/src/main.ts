@@ -1,4 +1,4 @@
-import '../../nodes/axon-worker/wasm_exec.js';
+import '@product-engine/rete-pe-nodes/assets/axon-worker/wasm_exec.js';
 
 import { app, BrowserWindow } from 'electron';
 

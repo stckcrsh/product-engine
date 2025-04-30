@@ -11,7 +11,14 @@
         "outputPath": "dist/apps/rete/be",
         "main": "apps/rete/be/src/main.ts",
         "tsConfig": "apps/rete/be/tsconfig.app.json",
-        "assets": ["apps/rete/be/src/assets"]
+        "assets": [
+          "apps/rete/be/src/assets",
+          {
+            "glob": "**/*",
+            "input": "apps/rete/nodes/assets",
+            "output": "./assets/"
+          }
+        ]
       },
       "configurations": {
         "production": {

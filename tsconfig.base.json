@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@product-engine/rete-pe-nodes": ["apps/rete/nodes/src/index.ts"]
+      "@product-engine/rete-pe-nodes": ["apps/rete/nodes/src/index.ts"],
+      "@product-engine/rete-pe-nodes/*": ["apps/rete/nodes/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

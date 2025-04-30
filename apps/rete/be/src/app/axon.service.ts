@@ -1,12 +1,13 @@
 import { ipcMain } from 'electron';
 import * as fs from 'fs';
+import { join } from 'path';
 
 export class AxonService {
-  constructor() {
+  constructor(rootPath:string) {
     //@ts-ignore
     const go = new Go();
     const file = fs.readFileSync(
-      '/Users/ZacharyWoolever/Documents/git/product-engine/apps/rete/nodes/axon-worker/rex.wasm'
+      join(rootPath, 'assets/axon-worker/rex.wasm')
     );
     WebAssembly.instantiate(file, go.importObject).then(async (result) => {
       go.run(result.instance);

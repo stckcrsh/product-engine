@@ -62,7 +62,7 @@ export default class App {
     const fileWatcher = new FileWatcherService(configService);
 
     const projectService = new ProjectService();
-    const axonService = new AxonService();
+    const axonService = new AxonService(__dirname);
 
     axonService.setupEvents();
     configService.setupEvents();
