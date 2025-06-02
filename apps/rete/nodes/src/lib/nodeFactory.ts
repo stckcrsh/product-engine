@@ -40,9 +40,15 @@ export class NodeFactory {
     fileLoader: FileLoader,
     policyExecutor: PolicyExecutor,
     policyValidator: PolicyValidator,
-    axonService: AxonService
+    axonService: AxonService,
+    editor: any
   ) {
     this.nodeFactories = {
+      [MERGE_NODE]: () => {
+        const newNode = new MergeNode(editor, onChange);
+        return newNode;
+      },
+
       [EXECUTE_POLICY_NODE]: () => {
         const newNode = new ExecutePolicyNode(policyExecutor);
         return newNode;
@@ -64,12 +70,6 @@ export class NodeFactory {
         const newNode = new FileLoaderNode(
           '',
           fileLoader,
-          onChange
-        );
-        return newNode;
-      },
-      [MERGE_NODE]: () => {
-        const newNode = new MergeNode(
           onChange
         );
         return newNode;

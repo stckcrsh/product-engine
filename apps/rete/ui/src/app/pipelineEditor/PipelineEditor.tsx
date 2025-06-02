@@ -183,7 +183,7 @@ export default ({ project }: { project?: string }) => {
         jpex.constant('AxonService', axonService);
 
 
-        jpex.service('NodeFactory', ['processEngine', 'FileLoader', 'PolicyExecuter', 'PolicyValidator', 'AxonService'], NodeFactory)
+        jpex.service('NodeFactory', ['processEngine', 'FileLoader', 'PolicyExecuter', 'PolicyValidator', 'AxonService', EDITOR_DI_ID], NodeFactory)
 
         // Setting up the main blocs
         jpex.service<PipelineGraphBloc>(PIPELINE_GRAPH_BLOC_DI_ID, [EDITOR_DI_ID, 'NodeFactory'], PipelineGraphBloc, { lifecycle: 'container' });

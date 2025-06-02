@@ -17,6 +17,7 @@ import {
 import { FileControlView, MonacoControlView } from '../../editor';
 import { Schemes } from '../types';
 import { CustomNode } from './CustomNode';
+import { createMergeNode } from './MergeNode';
 
 export const PIPELINE_GRAPH_BLOC_DI_ID = 'uiBloc';
 
@@ -163,9 +164,9 @@ export class PipelineGraphBloc {
       Presets.classic.setup({
         customize: {
           node(context) {
-            console.log('thing:', context.payload);
-            if (context.payload.label === 'Fully customized') {
-              return CustomNode;
+            console.log('node customization:', context.payload);
+            if ((context.payload as any).type === MERGE_NODE) {
+              return createMergeNode(area);
             }
             return CustomNode;
           },
@@ -176,7 +177,7 @@ export class PipelineGraphBloc {
             if (data.payload instanceof FileControl) {
               return FileControlView;
             }
-            return null;
+            return Presets.classic.Control;
           },
         },
       })
